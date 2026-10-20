@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GuaraClub – Protótipo</title>
+<style>
+:root{--bg:#6b4529;--bg2:#85807c;--card:rgba(255,255,255,.18);--line:#fff;--txt:#fff;--accent:#e8813f;--brown:#6b4529;--btn:#c0652c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#4a2f1b;--bg2:#5d5753}}
+:root[data-theme="dark"]{--bg:#4a2f1b;--bg2:#5d5753}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--txt);background:linear-gradient(var(--bg) 40%,var(--bg2));min-height:100vh;background-attachment:fixed}
+a{color:inherit;text-decoration:none;cursor:pointer}
+button{font:inherit;cursor:pointer;border:0}
+.login{display:grid;grid-template-columns:1.1fr 1fr;min-height:100vh}
+.hero{background:linear-gradient(160deg,#1b1745,#3b2a7a 45%,#0f7c7c);display:flex;align-items:center;justify-content:center;padding:24px}
+.sign{background:#fff1;border:4px solid #7be0d0;border-radius:14px;padding:28px 36px;font-size:clamp(28px,4vw,52px);font-weight:900;color:#aef5ea;text-align:center;text-shadow:0 0 14px #19d1c0;line-height:1.05;background:#6a4326}
+.sign small{display:block;font-size:.4em;color:#e8c9a0;margin-top:8px}
+.panel{background:#3f2e22;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center}
+.logo{width:120px;height:120px;border-radius:50%;border:3px solid #d9b07a;background:#1a1512;display:grid;place-items:center;font-size:52px;margin-bottom:6px}
+.panel h2{color:#f3dcc0;margin:10px 0 18px}
+.panel form{width:min(380px,100%);text-align:left}
+label{display:block;font-weight:700;color:#f3dcc0;margin:10px 4px 4px}
+input.f{width:100%;padding:13px 16px;border-radius:14px;border:0;background:#ffffff55;color:#fff;font-weight:600;font-size:15px;outline:none}
+input.f::placeholder{color:#e9d9c6}
+.go{width:100%;margin-top:22px;padding:14px;border-radius:12px;background:var(--btn);color:#fff;font-weight:800;letter-spacing:.5px}
+.go:hover{filter:brightness(1.1)}
+.alt{margin-top:12px;color:#f3dcc0;font-weight:700;display:block}
+.cp{font-size:11px;margin-top:26px;color:#f3dcc0;font-weight:600}
+.app{max-width:1180px;margin:0 auto;padding:14px 18px 24px}
+.top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.pill{background:var(--card);border:1px solid #fff4;color:#fff;border-radius:999px;padding:10px 20px;font-weight:700}
+.pill:hover,.pill.on{background:#ffffff44}
+.nav{margin-left:auto;display:flex;gap:clamp(10px,2.2vw,30px);flex-wrap:wrap;font-weight:700;letter-spacing:2px;font-size:clamp(14px,1.8vw,21px)}
+.nav a:hover,.nav a.on{color:var(--accent)}
+.cols{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+.box{border:2px solid var(--line);border-radius:22px;background:linear-gradient(#ffffff1c,#ffffff0d);padding:16px;box-shadow:0 8px 18px #0004}
+.box+.box{margin-top:16px}
+.ttl{display:block;margin:0 auto 14px;width:max-content;max-width:100%;background:#ffffff40;border-radius:14px;padding:8px 26px;font-weight:700;font-size:19px}
+.sug{display:flex;gap:4px;background:#ffffff40;padding:5px;border-radius:8px;overflow:auto}
+.pc{background:#fff;color:#222;border-radius:6px;padding:8px 6px;text-align:center;font-size:10px;min-width:82px;flex:1}
+.av{width:42px;height:42px;border-radius:50%;margin:0 auto 4px;display:grid;place-items:center;font-size:22px;background:#e8d5c0}
+.pc em{display:block;color:#666;font-size:9px}
+.pc button{margin-top:6px;width:100%;background:#2e73c4;color:#fff;font-size:8px;font-weight:700;padding:4px;border-radius:3px}
+.pc button.ok{background:#3a9d5d}
+.hl{background:#ffffff30;border:2px solid #fff6;border-radius:14px;padding:12px;font-weight:700;font-size:14px;letter-spacing:.5px;text-align:center;margin-bottom:12px}
+.tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{flex:1;min-width:110px;background:#ffffff45;color:#fff;border-radius:14px;padding:10px;font-weight:700;font-size:17px}
+.tabs button.on{background:#fff;color:var(--brown)}
+.inner{border:2px solid var(--line);border-radius:18px;padding:14px}
+.post{background:#ffffff40;border:2px solid #fff6;border-radius:14px;padding:14px 18px;margin-bottom:14px;line-height:1.5;font-weight:600}
+.post.w{border-color:#fff}
+.post h4{margin:0 0 8px}
+.post .t{color:#f3dcc0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
+.vc{border-radius:16px;border:3px solid #fff;padding:16px;min-height:150px;background:linear-gradient(135deg,#e2662c,#c5521f)}
+.vc.d{background:linear-gradient(135deg,#1f3a4f,#14283a)}
+.vc b{display:block;font-size:20px;margin:10px 0 6px;color:#ffe7d3}
+.vc i{font-size:11px;background:#222c;padding:3px 9px;border-radius:99px;font-style:normal}
+.vc p{font-size:12px;margin:0;color:#ffe7d3}
+.chat{display:flex;flex-direction:column;gap:12px}
+.m{display:flex;gap:10px;align-items:flex-start}
+.m.me{justify-content:flex-end}
+.bub{background:#ffffff45;border-radius:14px;padding:8px 16px;font-weight:600;max-width:75%}
+.bub b{display:block}
+.in{display:flex;gap:8px;margin-top:12px}
+.in input{flex:1;padding:12px 18px;border-radius:999px;border:0;background:#ffffff55;color:#fff;font-size:16px;outline:none}
+.in input::placeholder{color:#fff}
+.in button{width:46px;border-radius:50%;background:#ffffff55;color:#fff;font-size:18px}
+.about p{line-height:1.6;font-weight:600;margin:0 0 16px}
+.dev{display:flex;justify-content:center;gap:16px;align-items:center;font-weight:700;font-size:19px;margin:10px 0;flex-wrap:wrap}
+.dev span a{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#fff;margin-left:4px;font-size:13px;color:#333;font-weight:800}
+.mut{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+.ev{background:#1e1410;border-radius:14px;padding:18px}
+.ev h3{font-size:26px;margin:6px 0 14px}
+.ev .tag{background:#ffffff1a;padding:4px 12px;border-radius:99px;font-size:11px}
+.ev .alert{border:1px solid #a33;border-radius:10px;padding:12px;margin-bottom:12px;font-weight:700}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g2 div{border:1px solid #fff2;border-radius:10px;padding:10px;font-size:13px}
+.g2 b{display:block;font-size:15px;margin-top:4px}
+.ev button{background:var(--btn);color:#fff;font-weight:700;padding:10px 18px;border-radius:8px;margin-top:14px}
+.side .hl{margin-bottom:12px;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:700;margin-top:20px;text-align:center}
+.hide{display:none}
+@media(max-width:860px){.login{grid-template-columns:1fr}.hero{min-height:220px}.cols{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.mut{grid-template-columns:1fr}.nav{margin-left:0;width:100%}.bub{max-width:90%}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var logged=false,page='login',tab={};
+var people=[['Alice Pereira','32, Curitiba, PR','8 amigos em comum','👩'],['Bruno Silva','29, São Paulo, SP','Estudou na USP','🧔'],['Camila Lima','27, Rio de Janeiro, RJ','Trabalha na TechCorp','👩🏾']];
+var msgs=[['Ana','Genteee, vocês viram que agora tá tudo tendo inteligência artificial? 😂','👩‍🦱'],['Bia','SIM KKKKK\nDaqui a pouco a IA vai fazer até nosso trabalho da faculdade.','👩🏻'],['Carol','Amiga, daqui a pouco? 👀\nJá faz tempo que ela tá ajudando a gente KKKKK','👩‍🦰'],['Ana','Pior que é verdade 😂\nEu usei pra entender um código em C ontem.','👩‍🦱']];
+var routes=['sobre','comunidade','vagas','novidades','devs'];
+var names={sobre:'Sobre',comunidade:'Comunidade',vagas:'Vagas',novidades:'Novidades',devs:'Devs'};
+var urls={login:'',cadastro:'',home:'/emilyhelena',vagas:'/vagasdeemprego',chat:'/chat',sobre:'/sobre',comunidade:'/comunidade',novidades:'/novidades',devs:'/desenvolvedores'};
+function go(p){if(p==='sair'){logged=false;p='login'}page=p;render();window.scrollTo(0,0)}
+function tabs(k,list){var a=tab[k]||0;return '<div class="tabs">'+list.map(function(t,i){return '<button class="'+(i==a?'on':'')+'" onclick="tab[\''+k+'\']='+i+';render()">'+t+'</button>'}).join('')+'</div>'}
+function sug(){return '<div class="box"><span class="ttl">Sugestões</span><div class="sug">'+people.map(function(p,i){return '<div class="pc"><div class="av">'+p[3]+'</div><b>'+p[0]+'</b><br>'+p[1]+'<em>'+p[2]+'</em><button onclick="this.textContent=\'ENVIADO ✓\';this.className=\'ok\'">ADICIONAR</button></div>'}).join('')+'</div></div>'}
+function dest(){return '<div class="box side"><span class="ttl">Destaques Do Dia</span><div class="hl">🤖 IA generativa segue revolucionando o mercado de trabalho em 2026. Empresas que se adaptam saem na frente.</div><div class="hl">📱 Novos smartphones chegam com câmeras ainda mais inteligentes e bateria que dura o dia todo.</div></div>'}
+function foot(){return '<div class="foot"><span>Sobre • Comunidade • Vagas • Novidades • Devs • Sair</span><span>© 2026 GuaraClub Tech. Todos os direitos reservados.<br>Developed by GuaraClub Tech</span><span>"Sob o mesmo céu, sonhamos alto"</span></div>'}
+function main(){
+ if(page=='home'){var t=tab.home||0;var posts=[['Passei o fim de semana estudando uma tecnologia nova e me lembrei por que amo essa área. Sempre tem algo novo pra aprender! 🚀','#DevLife #AprendizadoContínuo'],['Feliz em compartilhar que comecei um novo desafio profissional essa semana! Gratidão por essa oportunidade. 🙌','#NovosDesafios #Carreira']];
+  var body=t==0?posts.map(function(p,i){return '<div class="post'+(i?' w':'')+'">'+p[0]+'<div>'+p[1]+'</div></div>'}).join(''):'<div class="post">'+['','Nenhuma notícia nova por enquanto. 📰','Você ainda não tem comentários. 💬','Pessoas que você pode conhecer aparecem em Sugestões. 👥'][t]+'</div>';
+  return '<div class="cards"><a class="vc" onclick="go(\'vagas\')"><i>1 VAGA DISPONÍVEL</i><b>COORDENADOR(A) DE PROJETOS</b><p>Lidere times, organize entregas e faça a diferença nos nossos projetos mais estratégicos.</p></a><a class="vc" onclick="go(\'vagas\')"><i>VAGA ABERTA</i><b>ESTAMOS CONTRATANDO</b><p>Analista de TI Pleno • Home office flexível • Vale alimentação e saúde</p></a><a class="vc d" onclick="go(\'vagas\')"><i>VENHA PARA O NOSSO TIME</i><b>DESENVOLVEDOR(A) FULL STACK</b><p>Procuramos alguém apaixonado por tecnologia para crescer junto com a gente.</p></a></div><div class="box">'+tabs('home',['Suas Publicações','Notícias','Comentários','Pessoas'])+body+'</div>'}
+ if(page=='vagas'){var t=tab.vagas||0;var v=[['Empresa TchsIA','Analista de TI Pleno','💼 ESTAMOS CONTRATANDO!<br>Buscamos um(a) Analista de TI Pleno para se juntar ao nosso time.<br>✅ Home office flexível<br>✅ Vale alimentação e saúde<br>✅ Plano de carreira estruturado','#VagaDeEmprego #Contratando #TI'],['Empresa TIinvest','Desenvolvedor(a) Full Stack','🚀 Venha para o nosso time!<br>Procuramos um(a) Desenvolvedor(a) Full Stack apaixonado(a) por tecnologia para crescer junto com a gente.<br>Requisitos: React, Node.js e vontade de aprender.<br>📍 Remoto | CLT | Pleno/Sênior','#VagaDeEmprego #DevJobs #TrabalheConosco']];
+  var list=t==2?[v[1]]:t==1?[]:v;
+  return '<div class="box">'+tabs('vagas',['Vagas de Emprego','Estágio','Home Office'])+'<div class="inner">'+(list.length?list.map(function(x){return '<div class="post"><h4>'+x[0]+'</h4><b>'+x[1]+'</b><br>'+x[2]+'<div class="t">'+x[3]+'</div></div>'}).join(''):'<div class="post">Nenhuma vaga de estágio no momento. 🔎</div>')+'</div></div>'}
+ if(page=='chat'){var t=tab.chat||0;
+  var c=t==0?'<div class="chat">'+msgs.map(function(m){return '<div class="m"><div class="av">'+m[2]+'</div><div class="bub"><b style="color:'+({Ana:'#4aa3ff',Bia:'#ff8d8d',Carol:'#5fe08a'}[m[0]])+'">'+m[0]+'</b>'+m[1].replace('\n','<br>')+'</div></div>'}).join('')+'<div id="mine"></div></div><div class="in"><input id="mi" placeholder="Mensagens" onkeydown="if(event.key==\'Enter\')send()"><button>📎</button><button onclick="send()">➤</button></div>':'<div class="post">'+(t==1?'Você ainda não participa de grupos. 👥':'Sem solicitações pendentes. ✉️')+'</div>';
+  return '<div class="box">'+tabs('chat',['Mensagens','Grupos','Solicitações'])+'<div class="inner">'+c+'</div></div>'}
+ if(page=='sobre')return '<div class="box"><span class="ttl">Sobre</span><div class="inner about"><p>O GuaraClub nasceu para ser o ponto de encontro de estudantes e profissionais de Tecnologia que querem crescer juntos. Assim como o lobo-guará, símbolo da nossa marca, acreditamos que é preciso ousadia para enxergar longe e coragem para seguir o próprio caminho.</p><p>Aqui você conecta-se com pessoas que compartilham os mesmos desafios: quem está dando os primeiros passos na programação e quem já vive o dia a dia do mercado de tecnologia. Um espaço para trocar conhecimento, tirar dúvidas, compartilhar conquistas e construir uma rede de contatos de verdade.</p><p>No GuaraClub você encontra vagas de emprego, conteúdos sobre tecnologia, discussões sobre carreira e um ambiente colaborativo onde ninguém aprende sozinho. Acreditamos que a tecnologia evolui mais rápido quando compartilhada em comunidade.</p><p>Seja você um estudante buscando sua primeira oportunidade ou um profissional experiente querendo compartilhar conhecimento, aqui há espaço para você brilhar — como uma estrela no céu noturno que guia o nosso lobo.</p><p style="text-align:center">Sob o mesmo céu, sonhamos alto</p></div></div>';
+ if(page=='comunidade'||page=='novidades'){var com=page=='comunidade';var T=com?['Grupos','Projetos','Q&A','Parceiros']:['Tendências','Eventos','Tecnologias','Atualizações'];
+  var I=com?[['Fórum de Dúvidas e Discussões (Q&A)','Espaço para devs tirarem dúvidas sobre código, arquitetura e bancos de dados.'],['Projetos dos Membros (Showcase)','Publique projetos, portfólios e ideias para receber feedback da comunidade.'],['Busca de Parceiros de Projeto','Encontre programadores para colaborar em open-source, startups ou side-projects.'],['Grupos de Estudo','Tópicos dedicados onde alunos e profissionais compartilham links, livros e exercícios.']]:[['Feed de Tendências de Tecnologia','Artigos curtos e destaques sobre IA, desenvolvimento de software, cloud e novas linguagens.'],['Atualizações do Ecossistema GuaraClub','Novos recursos da plataforma, parcerias com empresas de TI e relatórios de mercado.'],['Lançamentos de Ferramentas e Frameworks','Boletins rápidos cobrindo novas versões de tecnologias populares como React e Node.js.'],['Eventos e Hackathons','Agenda com próximos webinars, encontros presenciais e competições de programação.']];
+  var a=tab[page]; return '<div class="box">'+tabs(page,T)+'<div class="inner">'+I.map(function(x,i){return '<div class="post w" style="text-align:center;'+(a==i?'background:#ffffff70':'')+'"><b style="color:#f3dcc0;font-size:18px">'+x[0]+'</b><br><i>'+x[1]+'</i></div>'}).join('')+'<div style="text-align:center;font-weight:700">#GuaraClub #Tecnologia #Novidades</div>'+(com?'':'<div style="text-align:center;margin-top:12px"><button class="pill" onclick="go(\'mutirao\')">🚨 Ver Mutirão de Caça-Bugs de hoje</button></div>')+'</div></div>'}
+ if(page=='mutirao')return '<div class="box"><div class="mut"><div class="ev"><span class="tag">🛠️ COMUNIDADE BUILDTREE</span><h3>Sprint coletiva pra derrubar os bugs</h3><div class="alert">🚨 Mutirão de Caça-Bugs</div><div class="g2"><div>📅 Data/Hora<b>Hoje, às 19:30</b>Horário de Brasília</div><div>🏆 Premiação<b>R$ 1.500,00</b>+ Estágio na GuaraClub Tech<br>+ Badge Lendária no perfil</div><div>💻 Stack do projeto<b>Node.js, React, PostgreSQL</b></div><div>👥 Vagas restantes<b id="vg" style="color:#7be07b">14 vagas</b>na sala principal</div></div><button onclick="var e=document.getElementById(\'vg\');e.textContent=\'13 vagas\';this.textContent=\'Inscrição confirmada ✓\'">Entrar no mutirão</button></div><div><div class="hl">🚨 Hora de apagar o incêndio: Junte-se ao Mutirão de Caça-Bugs da Comunidade Buildtree hoje, às 19:30!<br>#Buildtree #MutiraoDev #CacaBugs</div><div class="hl">🏆 Caça-bugs valendo prêmio, vaga de estágio e badge lendária no perfil: restam apenas 14 vagas na sala principal!<br>#NodeJS #ReactJS</div><div class="hl">⚠️ As vagas fecham em breve! Acesse buildtree.com.br/mutirao para garantir o seu lugar.<br>#DevsBrasil #BugHunter #VagasTech</div></div></div></div>';
+ if(page=='devs'){var d=['Vanessa Vieira dos Santos','Gustavo Sacomani Rafael','João Pedro Camargo de Souza','Pamela Nunes de Campos','Henrique de Oliveira Granso','Mykaelly Pryscylly Rodrigues de Paulo'];
+  return '<div class="box"><span class="ttl">Desenvolvedores</span><div class="inner"><p style="font-weight:700;line-height:1.5">O GuaraClub foi desenvolvido por uma equipe de estudantes de Ciência da Computação e ADS (Análise e Desenvolvimento de Sistemas) em 2026.</p>'+d.map(function(n){return '<div class="dev">'+n+'<span><a>W</a><a>I</a><a>G</a><a>in</a></span></div>'}).join('')+'</div></div>'}
+ return ''}
+function send(){var i=document.getElementById('mi');if(!i||!i.value.trim())return;msgs.push(['Você',i.value,'🙂']);var d=document.createElement('div');d.className='m me';d.innerHTML='<div class="bub"></div>';d.firstChild.textContent=i.value;document.getElementById('mine').appendChild(d);i.value=''}
+function render(){
+ var r=document.getElementById('root');
+ if(page=='login'||page=='cadastro'){var c=page=='cadastro';
+  r.innerHTML='<div class="login"><div class="hero"><div class="sign">COMUNIDADE<br>TECH BRAZIL<small>🐺 GUARACLUB</small></div></div><div class="panel"><div class="logo">🐺</div><h2>'+(c?'Crie Sua Conta':'Bem-vindo de volta')+'</h2><form onsubmit="logged=true;go(\'home\');return false">'+(c?'<label>Nome</label><input class="f" placeholder="Ex: Emily Helena" required>':'')+'<label>Email</label><input class="f" type="email" placeholder="Ex: emilyhelena@gmail.com" required><label>Senha</label><input class="f" type="password" placeholder="********" required>'+(c?'<label>Confirmação de Senha</label><input class="f" type="password" placeholder="********" required>':'')+'<button class="go">ENTRAR</button></form><a class="alt" onclick="go(\''+(c?'login':'cadastro')+'\')">'+(c?'Já tem uma conta? Entrar':'Não tem uma conta? Crie sua conta')+'</a><div class="cp">© 2026 GuaraClub Tech. Todos os direitos reservados.<br>Developed by GuaraClub Tech</div></div></div>';return}
+ var left=page=='chat'?'Home':page=='home'||page=='vagas'||page=='novidades'||page=='comunidade'?'💬 Chat':'☰ Home';
+ var lt=(page=='home'||page=='vagas'||page=='novidades'||page=='comunidade')?['chat','💬 Chat']:['home','☰ Home'];
+ var nav=routes.map(function(x){return '<a class="'+(page==x?'on':'')+'" onclick="go(\''+x+'\')">'+names[x]+'</a>'}).join('')+'<a onclick="go(\'sair\')">Sair</a>';
+ var showD=page!='chat'&&page!='sobre';
+ r.innerHTML='<div class="app"><div class="top"><button class="pill" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==\'dark\'?\'light\':\'dark\'">💡</button><button class="pill" onclick="go(\''+lt[0]+'\')">'+lt[1]+'</button><button class="pill" onclick="alert(\'🔍 Pesquisa (protótipo)\')">🔍 Pesquisa</button><div class="nav">'+nav+'</div></div><div class="cols"><div>'+sug()+(showD?dest():'')+'</div><div>'+main()+'</div></div>'+foot()+'</div>';
+ document.title='guaraclub.com.br'+(urls[page]||'')+' – Protótipo'}
+render();
+</script>
+</body>
+</html>

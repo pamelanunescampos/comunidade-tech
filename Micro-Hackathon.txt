@@ -1,0 +1,65 @@
+MICRO-HACKATHON: COMUNIDADE TECH UNIVERSITÁRIA
+Termos: Mentoring Network, Tech Circles
+
+PARTE 1: RECORTE DO PROBLEMA
+Público prioritário: Estudantes e egressos.
+Públicos secundários: Profissionais da área.
+Problema específico: Foi identificado que não há algum aplicativo de tecnologia ou comunidades tech para a Universidade Braz Cubas e Cruzeiro  do Sul.
+Evidências e hipóteses: Foi observado que os estudantes, futuros ingressantes e egressos não possuem um meio de comunicação e networking eficientes para o mercado de trabalho e meios acadêmicos.
+Por tanto, é suposto que as possíveis problemáticas envolvam falta de inserções, como acesso a compartilhamento de cursos, divulgações de vagas de trabalho, estudos para vagas, provas e tecnologias.
+Frase da solução: A conexão vai além da maquina e o pensamento.
+
+PARTE 2: DESENHO DA SOLUÇÃO
+Solução: Mentoring Network
+Objetivo e funcionamento: Criar uma comunidade afim de guiar o estudante a ingressar na área e criar conexões com indivíduos de interesses semelhantes.
+Primeira jornada: Espalhar panfletos e banners com QR Code pela universidade e envio de e-mails com sugestões de comunidade com estudantes inscritos nas áreas de TI.
+Motivo para voltar: Comunidade ativa para compartilhar, cursos, vagas, conversas mentorias, conquistas e progressos profissionais e acadêmico reservada a universidade dos egressos, conectando novos e antigos ingressantes do mercado atual.
+Inclusão e acessibilidade: Áudio descrição, libras, acesso livre a alterações referente as suas deficiências e limitações.
+
+Solução: Tech Circles
+Objetivo e funcionamento: Comunicação, compartilhamento de cursos, vagas e concursos acadêmicos e profissionais e mentorias entre alunos e profissionais.
+Primeira jornada: Via email na inscrição em cursos de TI e/ou panfletos com QR Code.
+Motivo para voltar: Comunidade ativa para compartilhar, cursos, vagas, conquistas e progressos profissionais e acadêmico reservada a universidade dos egressos, conectando novos e antigos ingressantes do mercado atual.
+Inclusão e acessibilidade: Áudio descrição, libras, acesso livre a alterações referente as suas deficiências e limitações.
+
+PARTE 3: PROTÓTIPO TANGÍVEL PARA O MOCHILÃO
+Protótipo tangível: Rede social web no intuito de comunicação por voz, texto, compartilhamento de links, seguindo como base de inspiração Discord, Skype, Linkedin e Amino, com folder, abas e diretórios específicos para vagas, cursos, chamadas de voz/vídeo, etc. Tendo como uma das regras de negócio a inscrição do aluno de uma conta vinculada com o email institucional para validação de uma página web e rede social exclusiva para uso de universitários e egressos da UBC.
+Ferramenta utilizada: App Diagram, Figma, HTML, JavaScript, CSS e SQL (PostgreeSQL ou MySQL)
+Link de acesso ao protótipo: https://www.figma.com/design/Dvkawcvv6fYATFSN6pYfFA/ProjetoDesign?node-id=0-1&t=tYY4g1ozWIDu45sq-1
+Experiência no Mochilão: Com uma comunidade exclusiva, dará maior confiança relacionada a inclusão dos estudantes e egressos para os estudos, considerando que em suma, a maioria terá meios de se conectar além da web, usando ela como um meio de contato inicial, auxiliando nos estudos, mentorias e entrada no mercado de trabalho.
+Resultado disponível para experimentar: (não preenchido)
+Teste e aprendizado: (não preenchido)
+
+PARTE 4: IMPLANTAÇÃO EM 20 DIAS
+Dias 1 a 7: Problemas técnicos resolvidos, o cenário e as tecnologias utilizadas, o bloco de código principal, o impacto quantificável ou a lição aprendida, e a adição de links para a documentação oficial, repositório do GitHub ou artigos complementares.
+Dias 8 a 13: A abordagem seria dividir o grupo em três níveis: iniciantes (estudantes/juniores), intermediários (plenos), e avançados (seniores), ter métodos de teste de usabilidade e de sucesso medindo o tempo de conclusão da tarefa e a taxa de cliques errados tendo uma análise de resultados e uma matriz de correções prioritárias.
+Dias 14 a 20: Para o acesso terá links de diferentes níveis, os responsáveis dividirão em aprovador (Product Manager), desenvolvedores/designers, consultados (Criadores de Conteúdo Tech), e informados (comunidade de usuários). Para a preparação do Mochilão haverá documentação prévia, scripts e um canal de comunicação exclusivo, e para o acompanhamento inicial terá um monitoramento técnico de erros, métricas de engajamento e um feedback.
+Responsabilidades e continuidade: Atualização: Os desenvolvedores (Front-End, Backend e Mobile), os designers e os DevOps/Engenheiros de Infraestrutura.
+
+Moderação: Community Managers e os Devs Voluntários ou Seniores).
+
+Devolutiva: Developer Relations e o Suporte Técnico.
+
+Tomada de Decisões: Product Manager, Tech Lead e a Direção.
+Métricas iniciais: 1) Entrada - Medição do número de inscrições, acessos, e cliques únicos.
+
+2) Participação - Medição da quantidade de bugs reportados, o número de posts criados, e o tempo médio de permanência.
+
+3) Retorno - Medição das taxas de respostas corretas, compartilhamentos, e diminuição do tempo de resolução.
+
+4) Conclusão - Medição das taxas de retenção, número de tarefas/correções prioritárias concluídas, e uma nota de satisfação dos desenvolvedores.
+Resumo do pitch: Medição das taxas de retenção, número de tarefas/correções prioritárias concluídas, e uma nota de satisfação dos desenvolvedores.
+
+Resumo do pitch
+Problema: Erro de códigos sem acesso a ajudas que nos fazem evoluir.
+
+Solução: A criação de uma rede social 100% voltada para a tecnologia, onde o foco é a resolução de problemas em comunidade.
+
+Demonstração: Imagine um estudante preso em uma falha de conexão de banco de dados. Na nossa plataforma, ele cola o código diretamente no feed. O sistema identifica a linguagem automaticamente. Em menos de 5 minutos, um desenvolvedor sênior visualiza o bloco de código de forma limpa, comenta a linha exata do erro e propõe a refatoração, tudo isso de forma visual, rápida e assíncrona.
+
+Experiência dos novos estudantes: Ambiente acolhedor, uma jornada repleta de aprendizado, cada dúvida respondida e cada portfólio publicado gera pontos de reputação técnica, conectando esses talentos juniores diretamente com recrutadores que buscam quem realmente sabe resolver problemas práticos.
+
+Plano de 20 dias: Primeiramente ocorrerá um mutirão de caça bugs, depois implantaremos as correções prioritárias com base na matriz de impacto e por fim faremos o lançamento oficial focado na aquisição de novos usuários.
+
+Fechamento: A tecnologia move o mundo, mas a comunidade move a tecnologia. Estamos construindo o ecossistema que vai acelerar a próxima geração de desenvolvedores. O link de acesso compartilhável para o ambiente de testes já está disponível no QR Code da tela. Conectem-se, testem e nos ajudem a moldar o futuro do aprendizado tech!
+
